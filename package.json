@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "lint": "eslint . --ext .js",
+    "prettier": "prettier --config .prettier '*.js' --write"
   },
   "author": "",
   "license": "ISC",
@@ -16,8 +18,14 @@
     "fs": "^0.0.1-security",
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/sharp": "^0.32.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.2"
   }
 }

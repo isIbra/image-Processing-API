@@ -1,0 +1,5 @@
+{
+  "semi": true,
+  "single": true,
+  "ignore": ["/tsconfig.json"]
+}
