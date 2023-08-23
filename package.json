@@ -6,11 +6,11 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/index.ts",
-    "lint": "eslint . --ext .js",
     "prettier": "prettier --config .prettier '*.ts' --write",
+    "lint": "eslint . --ext .js",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write 'src/**/*.ts'",
-    "test": "npx tsc && jasmine"
+    "test": "npx tsc && jasmine",
+    "test1": "jasmine --config=jasmine.json"
   },
   "author": "",
   "license": "ISC",

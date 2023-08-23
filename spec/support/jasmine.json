@@ -10,21 +10,16 @@
   "stopSpecOnExpectationFailure": false,
   "stopOnSpecFailure": false,
   "failFast": false,
+  "displaySuiteNumber": true,
   "reporters": [
     {
       "name": "jasmine-spec-reporter",
       "options": {
         "prefixes": {
-          "success": "✓ ",
-          "failure": "✗ ",
-          "pending": "* "
-        },
-        "colors": {
-          "success": "green",
-          "failure": "red",
-          "pending": "yellow"
-        },
-        "customProcessors": []
+          "success": "✅ ",
+          "failure": "❌ ",
+          "pending": "- "
+        }
       }
     }
   ]

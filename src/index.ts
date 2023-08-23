@@ -53,7 +53,7 @@ async function processImageAndRespond(
     await sharp(processedImageBuffer).toFile(outputImagePath);
     console.log('Image saved to:', outputImagePath);
   } catch (error) {
-    console.error('An error occurred:', error);
+    // console.error('An error occurred:', error);
     res.status(500).send('An error occurred');
   }
 }
