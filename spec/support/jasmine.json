@@ -1,0 +1,31 @@
+{
+  "spec_dir": "build/",
+  "spec_files": [
+      "**/*[sS]pec.js"
+  ],
+  "helpers": [
+      "helpers/**/*.js"
+  ],
+  "random": true,
+  "stopSpecOnExpectationFailure": false,
+  "stopOnSpecFailure": false,
+  "failFast": false,
+  "reporters": [
+    {
+      "name": "jasmine-spec-reporter",
+      "options": {
+        "prefixes": {
+          "success": "✓ ",
+          "failure": "✗ ",
+          "pending": "* "
+        },
+        "colors": {
+          "success": "green",
+          "failure": "red",
+          "pending": "yellow"
+        },
+        "customProcessors": []
+      }
+    }
+  ]
+}
