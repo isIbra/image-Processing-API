@@ -1,4 +1,3 @@
-```markdown
 # Project README
 
 This README provides information about the setup, testing, and functionality of the project.
