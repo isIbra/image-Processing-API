@@ -22,7 +22,7 @@ exports.app = app;
 const port = 3000;
 const inputFile = './images/original';
 const outputFile = './images/processed';
-// Mandatory: API endpoint to process and serve images
+// API endpoint to process and serve images
 app.get('/process-image', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const filename = req.query.filename;
@@ -42,7 +42,7 @@ app.get('/process-image', (req, res) => __awaiter(void 0, void 0, void 0, functi
         res.status(500).send('An error occurred');
     }
 }));
-// Mandatory: Function to process image and respond
+// Function to process image and respond
 function processImageAndRespond(imagePath, width, height, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

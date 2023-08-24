@@ -9,7 +9,7 @@ const port = 3000;
 const inputFile = './images/original';
 const outputFile = './images/processed';
 
-// Mandatory: API endpoint to process and serve images
+// API endpoint to process and serve images
 app.get('/process-image', async (req: Request, res: Response) => {
   try {
     const filename = req.query.filename as string;
@@ -32,7 +32,7 @@ app.get('/process-image', async (req: Request, res: Response) => {
   }
 });
 
-// Mandatory: Function to process image and respond
+// Function to process image and respond
 async function processImageAndRespond(
   imagePath: string,
   width: number,

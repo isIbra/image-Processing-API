@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/index.ts",
-    "prettier": "prettier --config .prettier '*.ts' --write",
+    "prettier": "prettier --config .prettierrc '**/*.ts' --write",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint --fix",
     "test": "npx tsc && jasmine",
