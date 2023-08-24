@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const imageProcess_1 = require("../../utilities/imageProcess");
 describe('imageProcess', () => {
     it('should process an image', () => __awaiter(void 0, void 0, void 0, function* () {
-        const imagePath = '/Users/ibraom/Desktop/Devolepment/Udacity/First_Project/images/original/icelandwaterfall.jpg'; // Provide a valid image path
+        const imagePath = '../../../images/original/palmtunnel.jpg';
         const width = 200;
         const height = 150;
         const processedImageBuffer = yield (0, imageProcess_1.processImage)(imagePath, width, height);

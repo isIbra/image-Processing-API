@@ -14,55 +14,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
 const express_1 = __importDefault(require("express"));
-const sharp_1 = __importDefault(require("sharp"));
-const imageProcess_1 = require("./utilities/imageProcess");
+const imageHandler_1 = require("./utilities/imageHandler");
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 exports.app = app;
 const port = 3000;
 const inputFile = './images/original';
-const outputFile = './images/processed';
-// API endpoint to process and serve images
 app.get('/process-image', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const filename = req.query.filename;
-        const width = parseInt(req.query.width) || 300;
-        const height = parseInt(req.query.height) || 200;
-        // Check if filename parameter is provided
+        const width = parseInt(req.query.width, 10);
+        const height = parseInt(req.query.height, 10);
+        console.log('Received:', { filename, width, height }); //debug
         if (!filename) {
             res.status(400).send('Missing filename parameter');
             return;
         }
         const imagePath = path_1.default.join(inputFile, filename);
-        // Continue processing the image
-        processImageAndRespond(imagePath, width, height, res);
+        console.log('Image path:', imagePath); //debug
+        yield (0, imageHandler_1.processImageAndRespond)(imagePath, width, height, res);
     }
     catch (error) {
         console.error('An error occurred:', error);
         res.status(500).send('An error occurred');
     }
 }));
-// Function to process image and respond
-function processImageAndRespond(imagePath, width, height, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const processedImageBuffer = yield (0, imageProcess_1.processImage)(imagePath, width, height);
-            // Set response content type and send processed image
-            res.set('Content-Type', 'image/jpeg');
-            res.send(processedImageBuffer);
-            const outputFileName = `processed_${path_1.default.basename(imagePath)}`;
-            const outputImagePath = path_1.default.join(outputFile, outputFileName);
-            // Save processed image to file
-            yield (0, sharp_1.default)(processedImageBuffer).toFile(outputImagePath);
-            console.log('Image saved to:', outputImagePath);
-        }
-        catch (error) {
-            // console.error('An error occurred:', error);
-            res.status(500).send('An error occurred');
-        }
-    });
-}
-// Start the Express server
 app.listen(port, () => {
     console.log(`App listening on http://localhost:${port}`);
 });
