@@ -3,7 +3,7 @@ import path from 'path';
 
 describe('image handler', () => {
   it('should process an image', async () => {
-    const imagePath = path.join(__dirname, '../../../images/original/santamonica.jpg');
+    const imagePath = path.join(__dirname, '../../../images/original/palmtunnel.jpg');
     console.log('Image Path:', imagePath); // Added this line for debugging
     const width = 200;
     const height = 150;

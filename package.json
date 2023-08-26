@@ -9,9 +9,8 @@
     "prettier": "prettier --config .prettierrc '**/*.ts' --write",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint --fix",
-    "test": "npx tsc && jasmine",
-    "test1": "jasmine --config=jasmine.json"
-  },
+    "test": "npx tsc && jasmine"
+    },
   "author": "",
   "license": "ISC",
   "dependencies": {
