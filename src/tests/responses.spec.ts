@@ -4,7 +4,7 @@ import { app } from '../index';
 describe('Server Responses', () => {
   it('should respond with processed image and return status 200', async () => {
     const response = await request(app).get(
-      '/process-image?filename=encenadaport.jpg&width=200&height=150',
+      '/process-image?filename=icelandwaterfall.jpg&width=200&height=150',
     );
 
     expect(response.status).toBe(200);
